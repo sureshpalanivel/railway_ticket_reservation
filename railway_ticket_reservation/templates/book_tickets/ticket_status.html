@@ -1,0 +1,60 @@
+{% extends 'book_tickets/main.html' %}
+{% load static %}
+
+{% block 'contents' %}
+<br><br>
+<style>
+   /*  @media (min-width: 1200px) */
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 793px;
+    }
+
+</style>
+
+<div class="container">
+    <div class="ticket_status">
+        <h4 class="text-center" id="ticket_id" data-url="{% url 'api_ticket_status' pk %}"></h4>
+        <br/>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            Ticket Code
+            <span class="" id="ticket_code"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            Name
+            <span class="" id="name"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            Gender
+            <span class="" id="gender"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            Age
+            <span class="" id="age"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            Coach
+            <span class="" id="coach"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            Berth
+            <span class="" id="berth"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            Ticket Status
+            <span class="badge badge-primary badge-pill" id="status"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+            Date
+            <span class="" id="date"></span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+{% endblock 'contents' %}
+
+{% block 'js' %}
+{{block.super}}
+<script src="{% static '/book_tickets/js/ticket_status.js' %}"></script>
+{% endblock 'js' %}
